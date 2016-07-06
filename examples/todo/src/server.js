@@ -11,8 +11,10 @@ var app = express();
 // Expose a GraphQL endpoint
 app.use('/graphql', graphQLHTTP({schema, pretty: true}));
 
+// app.use(express.static(path.join(__dirname, 'public/assets')));
 // Serve CSS
 app.use('/css/', express.static(path.resolve(__dirname, '..', 'css')));
+
 
 // Serve JavaScript
 app.get('/app.js', (req, res) => {

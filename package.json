@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "babel-runtime": "^6.3.19",
+    "isomorphic-relay": "^0.7.0",
     "react-router-relay": "0.13.2"
   },
   "devDependencies": {

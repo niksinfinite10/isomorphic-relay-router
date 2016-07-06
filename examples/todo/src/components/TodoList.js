@@ -43,17 +43,17 @@ class TodoList extends React.Component {
     var numTodos = this.props.viewer.totalCount;
     var numCompletedTodos = this.props.viewer.completedCount;
     return (
-      <section className="main">
+      <section className="col-xs-1">
         <input
           checked={numTodos === numCompletedTodos}
-          className="toggle-all"
+          className="col-xs-1"
           onChange={this._handleMarkAllChange}
           type="checkbox"
         />
-        <label htmlFor="toggle-all">
+      <label htmlFor="toggle-all" className="text-inherit" >
           Mark all as complete
         </label>
-        <ul className="todo-list">
+        <ul className="text-inherit">
           {this.renderTodos()}
         </ul>
       </section>
