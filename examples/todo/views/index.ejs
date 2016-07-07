@@ -19,7 +19,18 @@
 
 </head>
 <body>
-    <div id="root"><%- reactOutput %></div>
+  <script src='assets/js/jquery.min.js'></script>
+  <script src='assets/js/chart.js'></script>
+  <script src='assets/js/toolkit.js'></script>
+
+  <script src='assets/js/application.js'></script>
+
+
+
+
+    <div id="root">
+
+      <%- reactOutput %></div>
     <script id="preloadedData" type="application/json">
         <%- JSON.stringify(preloadedData).replace(/\//g, '\\/') %>
     </script>

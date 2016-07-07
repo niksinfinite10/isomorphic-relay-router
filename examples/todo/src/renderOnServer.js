@@ -7,6 +7,7 @@ import Relay from 'react-relay';
 import routes from './routes';
 
 const GRAPHQL_URL = `http://localhost:8080/graphql`;
+// const GRAPHQL_URL = `https://graph.veg.me`;
 
 const networkLayer = new Relay.DefaultNetworkLayer(GRAPHQL_URL);
 
