@@ -19,15 +19,15 @@ class  Photos extends Component {
 
        <div data-grid="images" data-target-height="150">
          <div>
-           <img data-width="640" data-height="640" data-action="zoom" src="assets/img/instagram_5.jpg" />
+           <img data-width="640" data-height="640" data-action="zoom" src="img/instagram_5.jpg" />
          </div>
 
          <div>
-           <img data-width="640" data-height="640" data-action="zoom" src="assets/img/instagram_6.jpg" />
+           <img data-width="640" data-height="640" data-action="zoom" src="img/instagram_6.jpg" />
          </div>
 
          <div>
-           <img data-width="640" data-height="640" data-action="zoom" src="assets/img/instagram_7.jpg" />
+           <img data-width="640" data-height="640" data-action="zoom" src="img/instagram_7.jpg" />
          </div>
        </div>
      </div>

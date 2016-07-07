@@ -18,7 +18,7 @@ class  Suggestions extends Component {
       <a className="media-left" href="#">
         <img
           className="media-object img-circle"
-          src="assets/img/avatar-fat.jpg" />
+          src="img/avatar-fat.jpg" />
       </a>
       <div className="media-body">
         <strong>Jacob Thornton</strong> @fat
@@ -32,7 +32,7 @@ class  Suggestions extends Component {
       <a className="media-left" href="#">
         <img
           className="media-object img-circle"
-          src="assets/img/avatar-mdo.png" />
+          src="img/avatar-mdo.png" />
       </a>
       <div className="media-body">
         <strong>Mark Otto</strong> @mdo

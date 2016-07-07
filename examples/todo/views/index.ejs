@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Isomorphic Relay • TodoMVC</title>
-    <link rel="stylesheet" href="/css/base.css">
-    <link rel="stylesheet" href="/css/index.css">
+
     <link rel="apple-touch-icon" href="apple-touch-icon.png" >
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' type="text/css">
     <link rel='stylesheet' href='css/toolkit.css'>
@@ -17,14 +16,115 @@
 </head>
 <body>
       <div class="with-top-navbar" >
+        <nav class="navbar navbar-inverse navbar-fixed-top app-navbar">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+          <img src="img/brand-white.png" alt="brand" />
+        </a>
+      </div>
+      <div class="navbar-collapse collapse" id="navbar-collapse-main">
+
+          <ul class="nav navbar-nav hidden-xs">
+            <li class="active">
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="/profile">Profile</a>
+            </li>
+            <li>
+              <a data-toggle="modal" href="#msgModal">Messages</a>
+            </li>
+            <li>
+              <a href="docs/index.html">Docs</a>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right m-r-0 hidden-xs">
+            <li >
+              <a class="app-notifications" href="/notifications">
+                <span class="icon icon-bell"></span>
+              </a>
+            </li>
+            <li>
+              <button class="btn btn-default navbar-btn navbar-btn-avitar" data-toggle="popover">
+                <img class="img-circle" src="img/avatar-dhg.png" />
+              </button>
+            </li>
+          </ul>
+
+          <form class="navbar-form navbar-right app-search" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" data-action="grow" placeholder="Search" />
+            </div>
+          </form>
+
+          <ul class="nav navbar-nav hidden-sm hidden-md hidden-lg">
+            <li><a href="/">Home</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/notifications">Notifications</a></li>
+            <li><a data-toggle="modal" href="#msgModal">Messages</a></li>
+            <li><a href="docs/index.html">Docs</a></li>
+            <li><a href="#" data-action="growl">Growl</a></li>
+            <li><a href="/login">Logout</a></li>
+          </ul>
+
+          <ul class="nav navbar-nav hidden">
+            <li><a href="#" data-action="growl">Growl</a></li>
+            <li><a href="/login">Logout</a></li>
+          </ul>
+        </div>
+    </div>
+  </nav>
+
+
+
+    <div class="modal fade" id="msgModal" tabindex="-1" role="dialog" aria-labelledby="msgModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <button type="button" class="btn btn-sm btn-primary pull-right app-new-msg js-newMsg">New message</button>
+            <h4 class="modal-title">Messages</h4>
+          </div>
+
+          <div class="modal-body p-a-0 js-modalBody">
+            <div class="modal-body-scroller">
+              <div class="media-list media-list-users list-group js-msgGroup">
+                <a href="#" class="list-group-item">
+                  <div class="media">
+                    <span class="media-left">
+                    <img class="img-circle media-object" src="img/avatar-fat.jpg" />
+                    </span>
+                    <div class="media-body">
+                      <strong>Jacob Thornton</strong> and <strong>1 other</strong>
+                      <div class="media-body-secondary">
+                        Aenean eu leo quam. Pellentesque ornare sem lacinia quam &hellip;
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
           <%- reactOutput %>
       </div>
-      <script src='assets/js/jquery.min.js'></script>
-      <script src='assets/js/chart.js'></script>
-      <script src='assets/js/toolkit.js'></script>
-
-      <script src='assets/js/application.js'></script>
+      <script src='js/jquery.min.js'></script>
+      <script src='js/chart.js'></script>
+      <script src='js/toolkit.js'></script>
+      <script src='js/application.js'></script>
     <script id="preloadedData" type="application/json">
+
         <%- JSON.stringify(preloadedData).replace(/\//g, '\\/') %>
     </script>
     <script src="/app.js"></script>

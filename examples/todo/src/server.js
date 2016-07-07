@@ -16,7 +16,8 @@ app.use('/graphql', graphQLHTTP({schema, pretty: true}));
 app.use('/css/', express.static(path.resolve(__dirname, '../public/assets', 'css')));
 
 app.use('/img/', express.static(path.resolve(__dirname, '../public/assets', 'img')));
-// app.use('/js/', express.static(path.resolve(__dirname, '../public/assets', 'js')));
+
+app.use('/js/', express.static(path.resolve(__dirname, '../public/assets', 'js')));
 
 
 // Serve JavaScript

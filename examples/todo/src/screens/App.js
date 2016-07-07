@@ -38,8 +38,6 @@ class App extends React.Component {
     var hasTodos = this.props.viewer.totalCount > 0;
     return (
         <div >
-          <Header />
-          <MessageModal />
           <div className="container p-t-md">
 
                   <div className="row">
@@ -65,8 +63,7 @@ export default Relay.createContainer(App, {
     viewer: () => Relay.QL`
       fragment on User {
         totalCount,
-        ${AddTodoMutation.getFragment('viewer')},
-        ${TodoListFooter.getFragment('viewer')},
+
       }
     `,
   },

@@ -1,4 +1,4 @@
-import TodoApp from './screens/App';
+import TodoApp from './screens/Notifications';
 import TodoList from './components/TodoList';
 import Header from './components/Header';
 import ViewerQueries from './queries/ViewerQueries';

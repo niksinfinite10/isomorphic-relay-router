@@ -26,7 +26,7 @@ class  MessageModal extends Component {
                 <a href="#" className="list-group-item">
                   <div className="media">
                     <span className="media-left">
-                    <img className="img-circle media-object" src="assets/img/avatar-fat.jpg" />
+                    <img className="img-circle media-object" src="img/avatar-fat.jpg" />
                     </span>
                     <div className="media-body">
                       <strong>Jacob Thornton</strong> and <strong>1 other</strong>
