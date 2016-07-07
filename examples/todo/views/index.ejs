@@ -14,23 +14,16 @@
     <link rel='stylesheet' href='css/application.css'>
 
 
-
-
-
 </head>
 <body>
-  <script src='assets/js/jquery.min.js'></script>
-  <script src='assets/js/chart.js'></script>
-  <script src='assets/js/toolkit.js'></script>
+      <div class="with-top-navbar" >
+          <%- reactOutput %>
+      </div>
+      <script src='assets/js/jquery.min.js'></script>
+      <script src='assets/js/chart.js'></script>
+      <script src='assets/js/toolkit.js'></script>
 
-  <script src='assets/js/application.js'></script>
-
-
-
-
-    <div id="root">
-
-      <%- reactOutput %></div>
+      <script src='assets/js/application.js'></script>
     <script id="preloadedData" type="application/json">
         <%- JSON.stringify(preloadedData).replace(/\//g, '\\/') %>
     </script>

@@ -20,6 +20,7 @@ import Photos from '../components/Photos';
 // import WallPost from '../components/WallPost';
 import WallPost from '../components/WallPost';
 import RightPanel from '../components/RightPanel';
+import MessageModal from '../components/MessageModal';
 
 import React from 'react';
 import Relay from 'react-relay';
@@ -36,20 +37,23 @@ class App extends React.Component {
   render() {
     var hasTodos = this.props.viewer.totalCount > 0;
     return (
+        <div >
+          <Header />
+          <MessageModal />
+          <div className="container p-t-md">
 
-      <div className="container p-t-md">
-                <div className="row">
-                  <div className="col-md-3">
-                    <ProfileCard    />
-                    <AboutInfo />
-                    <Photos />
+                  <div className="row">
+                    <div className="col-md-3">
+                      <ProfileCard    />
+                      <AboutInfo />
+                      <Photos />
+                    </div>
+
+                      <WallPost />
+                      <RightPanel />
                   </div>
-
-                    <WallPost />
-                    <RightPanel />
                 </div>
               </div>
-
 
     );
   }

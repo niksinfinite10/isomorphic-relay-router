@@ -15,7 +15,7 @@ class ProfileCard extends Component{
 render(){
     return(
       <div className="panel panel-default panel-profile m-b-md">
-
+          <div className="panel-heading"  ></div>
               <div className="panel-body text-center">
                 <a href="profile/index.html">
                   <img
