@@ -17,7 +17,9 @@ class  RightPanel extends Component {
 
       <div className="alert alert-warning alert-dismissible hidden-xs" role="alert">
         <button type="button" className="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <a className="alert-link" href="profile/index.html"> Visit your profile! </a>
+        <a  href="profile/index.html"> Visit your profile! </a>
+
+    
       </div>
       <Sponsored />
       <Suggestions />

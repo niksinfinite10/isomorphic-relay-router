@@ -2,7 +2,7 @@ import IsomorphicRouter from 'isomorphic-relay-router';
 import path from 'path';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
-import { match } from 'react-router';
+import { match,RouterContext } from 'react-router';
 import Relay from 'react-relay';
 import routes from './routes';
 
@@ -13,13 +13,19 @@ const networkLayer = new Relay.DefaultNetworkLayer(GRAPHQL_URL);
 
 export default (req, res, next) => {
   match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
+    // console.log('redirection location is ',req.url);
     if (error) {
       next(error);
     } else if (redirectLocation) {
+      console.log('this is redirectionLocation');
       res.redirect(302, redirectLocation.pathname + redirectLocation.search);
     } else if (renderProps) {
-      IsomorphicRouter.prepareData(renderProps, networkLayer).then(render, next);
+        console.log('this is renderprops condition');
+        IsomorphicRouter.prepareData(renderProps, networkLayer).then(render, next);
+
+
     } else {
+      console.log('this is 404');
       res.status(404).send('Not Found');
     }
 

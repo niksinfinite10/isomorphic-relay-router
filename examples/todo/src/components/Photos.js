@@ -4,7 +4,7 @@
  */
 
 import React,{Component} from 'react';
-
+import {IndexLink, Link} from 'react-router';
 
 class  Photos extends Component {
 
@@ -15,7 +15,7 @@ class  Photos extends Component {
     <div className="panel panel-default visible-md-block visible-lg-block">
      <div className="panel-body">
 
-       <h5 className="m-t-0">Photos <small>· <a href="#">Edit</a></small></h5>
+       <h5 className="m-t-0">Photos <small>· <Link to="/notifications" activeClassName="selected" className="alert-link" >Edit</Link> </small></h5>
 
        <div data-grid="images" data-target-height="150">
          <div>

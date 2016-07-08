@@ -28,7 +28,9 @@ app.get('/app.js', (req, res) => {
 
 // Serve HTML
 app.get('/*', (req, res, next) => {
-    renderOnServer(req, res, next);
+
+  
+  renderOnServer(req, res, next);
 });
 
 app.listen(APP_PORT, () => {

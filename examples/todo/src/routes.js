@@ -1,4 +1,6 @@
-import TodoApp from './screens/Notifications';
+import Notifications from './screens/Notifications';
+import Home from './screens/Home';
+import Profile from './screens/Profile';
 import TodoList from './components/TodoList';
 import Header from './components/Header';
 import ViewerQueries from './queries/ViewerQueries';
@@ -6,10 +8,10 @@ import ViewerQueries from './queries/ViewerQueries';
 export default [
     {
         path: '/',
-        component: TodoApp,
+        component: Home,
         queries: ViewerQueries,
         indexRoute: {
-            component: TodoList,
+            component: Home,
             queries: ViewerQueries,
             prepareParams: () => ({status: 'any'}),
         },
@@ -20,23 +22,12 @@ export default [
                 queries: ViewerQueries,
             },
         ],
+    },
+    {
+        path: 'notification',
+        component: Notifications,
+        queries: ViewerQueries,
     },
 
-    {
-        path: '/user',
-        component: Header,
-        queries: ViewerQueries,
-        indexRoute: {
-            component: TodoList,
-            queries: ViewerQueries,
-            prepareParams: () => ({status: 'any'}),
-        },
-        childRoutes: [
-            {
-                path: ':status',
-                component: TodoList,
-                queries: ViewerQueries,
-            },
-        ],
-    },
+
 ];
