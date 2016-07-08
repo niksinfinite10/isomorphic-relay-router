@@ -1,8 +1,9 @@
-import Notifications from './screens/Notifications';
+import Login from './screens/Login';
 import Home from './screens/Home';
 import Profile from './screens/Profile';
+import Notifications from './screens/Notifications';
 import TodoList from './components/TodoList';
-import Header from './components/Header';
+
 import ViewerQueries from './queries/ViewerQueries';
 
 export default [
@@ -10,24 +11,21 @@ export default [
         path: '/',
         component: Home,
         queries: ViewerQueries,
-        indexRoute: {
-            component: Home,
-            queries: ViewerQueries,
-            prepareParams: () => ({status: 'any'}),
-        },
-        childRoutes: [
-            {
-                path: ':status',
-                component: TodoList,
-                queries: ViewerQueries,
-            },
-        ],
-    },
+      },
     {
-        path: 'notification',
+        path: '/notifications',
         component: Notifications,
         queries: ViewerQueries,
     },
-
+    {
+        path: '/profile',
+        component: Profile,
+        queries: ViewerQueries,
+    },
+    {
+        path: '/login',
+        component: Login,
+        queries: ViewerQueries,
+    },
 
 ];
