@@ -13,5 +13,6 @@
 import Relay from 'react-relay';
 
 export default {
-  viewer: () => Relay.QL`query { viewer }`,
+  
+  node: () => Relay.QL`query { user(id:$userId) }`,
 };

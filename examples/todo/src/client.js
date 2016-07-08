@@ -8,7 +8,8 @@ import routes from './routes';
 
 const environment = new Relay.Environment();
 
-environment.injectNetworkLayer(new Relay.DefaultNetworkLayer('/graphql'));
+// environment.injectNetworkLayer(new Relay.DefaultNetworkLayer('/graphql'));
+environment.injectNetworkLayer(new Relay.DefaultNetworkLayer('https://graph.veg.me'));
 
 const data = JSON.parse(document.getElementById('preloadedData').textContent);
 

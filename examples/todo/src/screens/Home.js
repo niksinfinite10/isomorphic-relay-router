@@ -35,18 +35,17 @@ class App extends React.Component {
     );
   };
   render() {
-    var hasTodos = this.props.viewer.totalCount > 0;
+    // var hasTodos = this.props.viewer.totalCount > 0;
+    console.log('this is data from database', this.props.node.displayName);
     return (
         <div >
           <div className="container p-t-md">
-
                   <div className="row">
                     <div className="col-md-3">
-                      <ProfileCard    />
+                      <ProfileCard node={this.props.node}   />
                       <AboutInfo />
                       <Photos />
                     </div>
-
                       <WallPost />
                       <RightPanel />
                   </div>
@@ -60,9 +59,11 @@ class App extends React.Component {
 
 export default Relay.createContainer(App, {
   fragments: {
-    viewer: () => Relay.QL`
+    node: () => Relay.QL`
       fragment on User {
-        totalCount,
+        id,
+        displayName,
+        ${ProfileCard.getFragment('node')},
 
       }
     `,
