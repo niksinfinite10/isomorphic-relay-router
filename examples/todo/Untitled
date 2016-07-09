@@ -1,1 +1,1 @@
-curl -X POST -d @scripts/schema-request.json -o data/schema.json https://dev-graph-dot-vegme1234.appspot.com --header "Content-Type:application/json"
+curl -X POST -d @scripts/schema-request.json -o data/schema.json https://graph.veg.me --header "Content-Type:application/json"

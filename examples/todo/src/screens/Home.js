@@ -36,6 +36,17 @@ class App extends React.Component {
   };
   render() {
     // var hasTodos = this.props.viewer.totalCount > 0;
+
+    // var rows = [];
+    // var lastPost = null;
+    // this.props.node.forEach(function(product) {
+    //   if (product.category !== lastCategory) {
+    //     rows.push(<ProductCategoryRow category={product.category} key={product.category} />);
+    //   }
+    //   rows.push(<ProductRow product={product} key={product.name} />);
+    //   lastCategory = product.category;
+
+
     console.log('this is data from database', this.props.node.displayName);
     return (
         <div >
@@ -43,10 +54,10 @@ class App extends React.Component {
                   <div className="row">
                     <div className="col-md-3">
                       <ProfileCard node={this.props.node}   />
-                      <AboutInfo />
+                      <AboutInfo node={this.props.node} />
                       <Photos />
                     </div>
-                      <WallPost />
+                      <WallPost posts={this.props.node.posts} />
                       <RightPanel />
                   </div>
                 </div>
@@ -64,7 +75,14 @@ export default Relay.createContainer(App, {
         id,
         displayName,
         ${ProfileCard.getFragment('node')},
-
+        ${AboutInfo.getFragment('node')},
+        posts(first:10){
+          edges{
+            node{
+              ${WallPost.getFragment('post')},
+            }
+          }
+        }
       }
     `,
   },
