@@ -7,6 +7,9 @@ import React,{Component} from 'react';
 
 import Relay from 'react-relay';
 
+
+
+
 class Post extends Component{
   render(){
     console.log('render method of Post',this.props.post);
@@ -16,17 +19,17 @@ class Post extends Component{
           <a className="media-left" href="#">
             <img
               className="media-object img-circle"
-              src={'img/avatar-dhg.png'} />
+              src={`${this.props.post.user.profileImageUrl}`} />
           </a>
           <div className="media-body">
             <div className="media-heading">
-              <small className="pull-right text-muted"></small>
-              <h5> </h5>
+              <small className="pull-right text-muted"> {this.props.post.since}</small>
+              <h5>{this.props.post.user.displayName}</h5>
             </div>
             <p>{this.props.post.title}</p>
             <div className="media-body-inline-grid" data-grid="images">
               <div>
-                <img data-action="zoom" data-width="1050" data-height="700" src={'img/avatar-dhg.png'} />
+                <img data-action="zoom" data-width={`${this.props.post.imageUrlList[0].width}`} data-height={`${this.props.post.imageUrlList[0].height}`} src={`${this.props.post.imageUrlList[0].url}`} />
               </div>
             </div>
           </div>
@@ -50,9 +53,10 @@ class WallPost  extends Component{
   renderRow(){
 
       let rows = [];
+      console.log('the post is ',this.props.post);
       let lastPost = null;
-      this.props.posts.edges.map( (post) => {
-      console.log('render row method --->',post);
+      this.props.post.edges.map( (post) => {
+        console.log('this is render post  ',post);
       rows.push(<Post post={post.node} key={post.node.id} />);
     });
 
@@ -100,7 +104,7 @@ export default Relay.createContainer(WallPost, {
           likeCount,
           userHasLiked,
           description,
-          imageUrlList(width:500){
+          imageUrlList(width:1050){
             url,
             width,
             height

@@ -47,7 +47,8 @@ class App extends React.Component {
     //   lastCategory = product.category;
 
 
-    console.log('this is data from database', this.props.node.displayName);
+    // console.log('this is data from database', this.props.node.displayName);
+    console.log('this is post edges>>>>>>>',this.props.node.posts);
     return (
         <div >
           <div className="container p-t-md">
@@ -57,7 +58,7 @@ class App extends React.Component {
                       <AboutInfo node={this.props.node} />
                       <Photos />
                     </div>
-                      <WallPost posts={this.props.node.posts} />
+                      <WallPost post={this.props.node.posts} />
                       <RightPanel />
                   </div>
                 </div>
@@ -79,7 +80,21 @@ export default Relay.createContainer(App, {
         posts(first:10){
           edges{
             node{
-              ${WallPost.getFragment('post')},
+              id,
+              title,
+              imageUrlList(width:1050){
+                url,
+                width,
+                height
+              },
+              since,
+              user{
+                id,
+                diet,
+                profileImageUrl
+                displayName,
+              },
+
             }
           }
         }
