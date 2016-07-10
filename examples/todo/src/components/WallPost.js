@@ -84,9 +84,9 @@ class WallPost  extends Component{
                 <button type="button" className="btn btn-default">
                   <span className="icon icon-camera"></span>
                 </button>
+                </li>
               </div>
             </div>
-          </li>
             {this.renderRow()}
         </ul>
       </div>
@@ -104,7 +104,7 @@ export default Relay.createContainer(WallPost, {
           likeCount,
           userHasLiked,
           description,
-          imageUrlList(width:1050){
+          imageUrlList(width:500){
             url,
             width,
             height
