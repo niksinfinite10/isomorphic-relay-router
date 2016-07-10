@@ -84,9 +84,11 @@ class WallPost  extends Component{
                 <button type="button" className="btn btn-default">
                   <span className="icon icon-camera"></span>
                 </button>
+                </div>
+                </div>
                 </li>
-              </div>
-            </div>
+
+
             {this.renderRow()}
         </ul>
       </div>
