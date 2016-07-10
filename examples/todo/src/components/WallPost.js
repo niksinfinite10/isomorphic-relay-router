@@ -53,10 +53,10 @@ class WallPost  extends Component{
   renderRow(){
 
       let rows = [];
-      console.log('the post is ',this.props.post);
-      let lastPost = null;
+      // console.log('the post is ',this.props.post);
+      // let lastPost = null;
       this.props.post.edges.map( (post) => {
-        console.log('this is render post  ',post);
+        // console.log('this is render post  ',post);
       rows.push(<Post post={post.node} key={post.node.id} />);
     });
 
@@ -85,10 +85,8 @@ class WallPost  extends Component{
                   <span className="icon icon-camera"></span>
                 </button>
                 </div>
-                </div>
-                </li>
-
-
+              </div>
+            </li>
             {this.renderRow()}
         </ul>
       </div>

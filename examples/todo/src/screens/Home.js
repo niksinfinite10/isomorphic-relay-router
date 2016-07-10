@@ -48,7 +48,7 @@ class App extends React.Component {
 
 
     // console.log('this is data from database', this.props.node.displayName);
-    console.log('this is post edges>>>>>>>',this.props.node.feed);
+    // console.log('this is post edges>>>>>>>',this.props.node.feed);
     return (
         <div >
           <div className="container p-t-md">
@@ -56,7 +56,7 @@ class App extends React.Component {
                     <div className="col-md-3">
                       <ProfileCard node={this.props.node}   />
                       <AboutInfo node={this.props.node} />
-                      <Photos post={this.props.node.post} />
+                      <Photos post={this.props.node.posts} />
                     </div>
                       <WallPost post={this.props.node.feed} />
                       <RightPanel />
@@ -98,12 +98,12 @@ export default Relay.createContainer(App, {
             }
           }
         },
-        posts(first:10){
+        posts(first:6){
           edges{
             node{
               id,
               title,
-              imageUrlList(width:1050){
+              imageUrlList(width:500){
                 url,
                 width,
                 height
