@@ -1,5 +1,6 @@
 import Login from './screens/Login';
 import Home from './screens/Home';
+import Home1 from './screens/Home1';
 import Profile from './screens/Profile';
 import Notifications from './screens/Notifications';
 import TodoList from './components/TodoList';
@@ -40,8 +41,8 @@ export default [
   },
     {
         path: '/',
-        component: Home,
-        queries: ViewerQueries,
+        component: Home1,
+
         childRoutes: [
            {
                path: ':userId',

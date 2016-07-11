@@ -63,7 +63,7 @@ export default Relay.createContainer(Impact, {
         likeCount,
         userHasLiked,
         description,
-        imageUrlList(width:500){
+        imageUrlList(width:100){
           url,
           width,
           height
