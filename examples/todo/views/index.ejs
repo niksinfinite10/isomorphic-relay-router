@@ -9,8 +9,8 @@
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png" >
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' type="text/css">
-    <link rel='stylesheet' href='css/toolkit.css'>
-    <link rel='stylesheet' href='css/application.css'>
+    <link rel='stylesheet' href='/css/toolkit.css'>
+    <link rel='stylesheet' href='/css/application.css'>
 
 
 </head>
@@ -27,7 +27,7 @@
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="/">
-          <img src="img/brand-white.png" alt="brand" />
+          <img src="/img/brand-white.png" alt="brand" />
         </a>
       </div>
       <div class="navbar-collapse collapse" id="navbar-collapse-main">
@@ -55,7 +55,7 @@
             </li>
             <li>
               <button class="btn btn-default navbar-btn navbar-btn-avitar" data-toggle="popover">
-                <img class="img-circle" src="img/avatar-dhg.png" />
+                <img class="img-circle" src="/img/avatar-dhg.png" />
               </button>
             </li>
           </ul>
@@ -101,7 +101,7 @@
                 <a href="#" class="list-group-item">
                   <div class="media">
                     <span class="media-left">
-                    <img class="img-circle media-object" src="img/avatar-fat.jpg" />
+                    <img class="img-circle media-object" src="/img/avatar-fat.jpg" />
                     </span>
                     <div class="media-body">
                       <strong>Jacob Thornton</strong> and <strong>1 other</strong>
@@ -121,10 +121,10 @@
           <%- reactOutput %>
         </div>
       </div>
-      <script src='js/jquery.min.js'></script>
-      <script src='js/chart.js'></script>
-      <script src='js/toolkit.js'></script>
-      <script src='js/application.js'></script>
+      <script src='/js/jquery.min.js'></script>
+      <script src='/js/chart.js'></script>
+      <script src='/js/toolkit.js'></script>
+      <script src='/js/application.js'></script>
     <script id="preloadedData" type="application/json">
 
         <%- JSON.stringify(preloadedData).replace(/\//g, '\\/') %>

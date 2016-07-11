@@ -9,13 +9,13 @@
 
 import React, { Component } from 'react';
 import TrendingSearch from  '../components/TrendingSearch';
-import Photos from '../components/photos';
-import RightPanel from '../components/RightPanel';
+// import PostPhotos from '../components/PostPhotos';
+// import RightPanel from '../components/RightPanel';
 import ProfileCard from '../components/ProfileCard';
-
-import AddTodoMutation from '../mutations/AddTodoMutation';
-import TodoListFooter from '../components/TodoListFooter';
-import TodoTextInput from '../components/TodoTextInput';
+//
+// import AddTodoMutation from '../mutations/AddTodoMutation';
+// import TodoListFooter from '../components/TodoListFooter';
+// import TodoTextInput from '../components/TodoTextInput';
 import Relay from 'react-relay';
 
 
@@ -29,7 +29,7 @@ class  Notifications extends Component {
         <div className="row">
           <div className="col-md-3">
             <TrendingSearch />
-            <Photos />
+
             </div>
             <div className="col-md-6">
               <ul className="list-group media-list media-list-stream">
@@ -76,8 +76,8 @@ class  Notifications extends Component {
                       <a href="#"><strong>Fat</strong></a> and <a href="#"><strong>1 other</strong></a> followed you
                     </div>
                     <ul className="avatar-list">
-                      <li className="avatar-list-item"><img className="img-circle" src="../assets/img/avatar-fat.jpg" /></li>
-                      <li className="avatar-list-item"><img className="img-circle" src="../assets/img/avatar-dhg.png" /></li>
+                      <li className="avatar-list-item"><img className="img-circle" src="/img/avatar-fat.jpg" /></li>
+                      <li className="avatar-list-item"><img className="img-circle" src="/img/avatar-dhg.png" /></li>
                     </ul>
                   </div>
                 </li>
@@ -94,7 +94,7 @@ class  Notifications extends Component {
                     </div>
 
                     <div className="media-body-inline-grid" data-grid="images">
-                      <img data-width="640" data-height="640" data-action="zoom" src="../assets/img/instagram_3.jpg" />
+                      <img data-width="640" data-height="640" data-action="zoom" src="/img/instagram_3.jpg" />
                     </div>
                   </div>
                 </li>
@@ -116,7 +116,7 @@ class  Notifications extends Component {
                           <a className="media-left" href="#">
                             <img
                               className="media-object img-circle"
-                              src="../assets/img/avatar-fat.jpg" />
+                              src="/img/avatar-fat.jpg" />
                           </a>
                           <div className="media-body">
                             <div className="media-body-text">
@@ -144,9 +144,9 @@ class  Notifications extends Component {
                       <a href="#"><strong>Mark Otto</strong></a> and <a href="#"><strong>2 others</strong></a> favorited your post
                     </div>
                     <ul className="avatar-list">
-                      <li className="avatar-list-item"><img className="img-circle" src="../assets/img/avatar-dhg.png" /> </li>
-                      <li className="avatar-list-item"><img className="img-circle" src="../assets/img/avatar-mdo.png" /></li>
-                      <li className="avatar-list-item"><img className="img-circle" src="../assets/img/avatar-fat.jpg" /></li>
+                      <li className="avatar-list-item"><img className="img-circle" src="/img/avatar-dhg.png" /> </li>
+                      <li className="avatar-list-item"><img className="img-circle" src="/img/avatar-mdo.png" /></li>
+                      <li className="avatar-list-item"><img className="img-circle" src="/img/avatar-fat.jpg" /></li>
                     </ul>
                   </div>
                 </li>
@@ -165,21 +165,16 @@ class  Notifications extends Component {
                     <div className="m-t">
                       <div className="row">
                         <div className="col-md-6">
-
-
-                          <ProfileCard />
+                          <ProfileCard node={this.props.node}   />
                         </div>
-
-                         <div className="col-md-6">
+                        <div className="col-md-6">
                           <div className="panel panel-default panel-profile">
                             <div className="panel-heading"
-                                 style={{backgroundImage: "url(../assets/img/instagram_1.jpg)"}}></div>
+                                 style={{backgroundImage: "url(/img/instagram_1.jpg)"}}></div>
                             <div className="panel-body text-center">
-                              <img className="panel-profile-img" src="../assets/img/avatar-mdo.png" />
-
+                              <img className="panel-profile-img" src="/img/avatar-mdo.png" />
                               <h5 className="panel-title">Mark Otto</h5>
                               <p className="m-b-md">GitHub and Bootstrap. Formerly at Twitter. Huge nerd.</p>
-
                               <button className="btn btn-primary-outline btn-sm">
                                 <span className="icon icon-add-user"></span> Follow
                               </button>
@@ -202,8 +197,8 @@ class  Notifications extends Component {
                       <a href="#"><strong>Jacob Thornton</strong></a> and <a href="#"><strong>1 other</strong></a> updated their settings
                     </div>
                     <ul className="avatar-list">
-                      <li className="avatar-list-item"><img className="img-circle" src="../assets/img/avatar-fat.jpg" /></li>
-                      <li className="avatar-list-item"><img className="img-circle" src="../assets/img/avatar-dhg.png" /></li>
+                      <li className="avatar-list-item"><img className="img-circle" src="/img/avatar-fat.jpg" /></li>
+                      <li className="avatar-list-item"><img className="img-circle" src="/img/avatar-dhg.png" /></li>
                     </ul>
                   </div>
                 </li>
@@ -223,7 +218,7 @@ class  Notifications extends Component {
                 </li>
               </ul>
             </div>
-            <RightPanel />
+
         </div>
       </div>
    </div>
@@ -235,14 +230,12 @@ class  Notifications extends Component {
 
 export default Relay.createContainer(Notifications, {
   fragments: {
-    viewer: () => Relay.QL`
+    node: () => Relay.QL`
       fragment on User {
-        totalCount,
-
+        id,
+        displayName,
+        ${ProfileCard.getFragment('node')},
       }
     `,
-  },
+},
 });
-
-
-// +export default Notifications;

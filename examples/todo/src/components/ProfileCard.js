@@ -20,7 +20,7 @@ render(){
                 <a href="profile/index.html">
                   <img
                     className="panel-profile-img"
-                    src={this.props.node.profileImageUrl?this.props.node.profileImageUrl:'img/avatar-dhg.png'} />
+                    src={this.props.node.profileImageUrl?this.props.node.profileImageUrl:'/img/avatar-dhg.png'} />
                 </a>
 
                 <h5 className="panel-title">

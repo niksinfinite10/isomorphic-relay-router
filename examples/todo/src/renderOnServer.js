@@ -20,7 +20,7 @@ export default (req, res, next) => {
       console.log('this is redirectionLocation');
       res.redirect(302, redirectLocation.pathname + redirectLocation.search);
     } else if (renderProps) {
-        console.log('this is renderprops condition');
+        console.log('this is renderprops condition--------------------',req.url);
         IsomorphicRouter.prepareData(renderProps, networkLayer).then(render, next);
 
 

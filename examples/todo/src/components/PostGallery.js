@@ -14,15 +14,15 @@ class PostGallery extends Component {
   return (
     <div className="container m-y-md" data-grid="images">
       <div>
-        <img data-width="640" data-height="400" data-action="zoom" src="img/instagram_5.jpg" />
+        <img data-width="640" data-height="400" data-action="zoom" src="/img/instagram_5.jpg" />
       </div>
 
       <div>
-        <img data-width="640" data-height="640" data-action="zoom" src="img/instagram_6.jpg" />
+        <img data-width="640" data-height="640" data-action="zoom" src="/img/instagram_6.jpg" />
       </div>
 
       <div>
-        <img data-width="640" data-height="640" data-action="zoom" src="img/instagram_7.jpg" />
+        <img data-width="640" data-height="640" data-action="zoom" src="/img/instagram_7.jpg" />
       </div>
     </div>
   );
