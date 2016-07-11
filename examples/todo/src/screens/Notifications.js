@@ -12,7 +12,7 @@ import TrendingSearch from  '../components/TrendingSearch';
 // import PostPhotos from '../components/PostPhotos';
 // import RightPanel from '../components/RightPanel';
 import ProfileCard from '../components/ProfileCard';
-import NotificationComp from '../components/NotificationComp';
+import NotificationRow from '../components/NotificationRow';
 //
 // import AddTodoMutation from '../mutations/AddTodoMutation';
 // import TodoListFooter from '../components/TodoListFooter';
@@ -31,7 +31,7 @@ class  Notifications extends Component {
           <div className="col-md-3">
             <TrendingSearch />
           </div>
-          <NotificationComp />
+          <NotificationRow />
         </div>
       </div>
    </div>

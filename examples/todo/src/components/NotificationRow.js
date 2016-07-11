@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Relay from 'react-relay';
 import ProfileCard from '../components/ProfileCard';
 
-class NotificationComp extends Component {
+class NotificationRow extends Component {
 
 render(){
 
@@ -59,8 +59,12 @@ render(){
         </li>
 
         <li className="list-group-item media p-a">
-          <div className="media-left">
-            <span className="icon icon-camera text-muted"></span>
+          <div className="media-left ">
+          <div className="avatar-list-item">
+            <img
+                className="img-circle"
+                src="/img/instagram_3.jpg" />
+            </div>
           </div>
 
           <div className="media-body">
@@ -71,6 +75,10 @@ render(){
 
             <div className="media-body-inline-grid" data-grid="images">
               <img data-width="640" data-height="640" data-action="zoom" src="/img/instagram_3.jpg" />
+            </div>
+            <div className="media-left">
+              <span className="icon icon-heart text-muted"></span>  Like
+              &nbsp;&nbsp;&nbsp;<span className="icon icon-chat text-muted"></span>  Comment
             </div>
           </div>
         </li>
@@ -198,4 +206,4 @@ render(){
 }
 }
 
-export default NotificationComp;
+export default NotificationRow;
