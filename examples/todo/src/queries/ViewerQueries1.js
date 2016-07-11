@@ -13,5 +13,6 @@
 import Relay from 'react-relay';
 
 export default {
-  node: () => Relay.QL`query{ user(id:"VXNlcjoxNQ==") }`,
+  // node: () => Relay.QL`query{ node(id:"VXNlcjoxNQ==") }`,
+  node: () => Relay.QL`query{ node(id:$nodeId) }`,
 };

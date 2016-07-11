@@ -50,6 +50,7 @@ class WallPost extends Component{
                 </a>
               </div>
             </div>
+            <div>Comment Sections</div>
           </div>
         </li>
 

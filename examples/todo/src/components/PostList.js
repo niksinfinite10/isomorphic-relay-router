@@ -13,6 +13,7 @@ class PostList  extends Component{
   constructor(){
     super();
   }
+
   componentWillMount(){
   }
 
@@ -43,16 +44,16 @@ class PostList  extends Component{
       </div>
 
     );
+
   }
-  <Comment  />
 }
 
 export default Relay.createContainer(PostList, {
 
+  fragments: {
     userPosts: () => Relay.QL `
       fragment on User {
         id,
-        fragments: {
         posts(first:10){
           pageInfo{
             hasNextPage
@@ -62,9 +63,9 @@ export default Relay.createContainer(PostList, {
                 id,
                 ${WallPost.getFragment('post')},
               }
+          }
         }
       }
-    }
     `,
     userFeed: () => Relay.QL `
       fragment on User {
