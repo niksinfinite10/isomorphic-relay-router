@@ -6,6 +6,8 @@
 import React,{Component} from 'react';
 import Relay from 'react-relay';
 import WallPost from './WallPost';
+import Comment from './Comment';
+
 
 class PostList  extends Component{
   constructor(){
@@ -37,20 +39,20 @@ class PostList  extends Component{
               </div>
             </li>
             {this.renderRow()}
-            
         </ul>
       </div>
 
     );
   }
+  <Comment  />
 }
 
 export default Relay.createContainer(PostList, {
 
-  fragments: {
     userPosts: () => Relay.QL `
       fragment on User {
         id,
+        fragments: {
         posts(first:10){
           pageInfo{
             hasNextPage
@@ -60,9 +62,9 @@ export default Relay.createContainer(PostList, {
                 id,
                 ${WallPost.getFragment('post')},
               }
-          }
         }
       }
+    }
     `,
     userFeed: () => Relay.QL `
       fragment on User {

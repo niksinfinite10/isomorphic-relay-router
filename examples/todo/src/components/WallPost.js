@@ -45,15 +45,13 @@ class WallPost extends Component{
                 </a>
                 &nbsp;&nbsp;&nbsp;
 
-                <a data-toggle="modal" href='javascript:void(0)'  onClick={() => {  } } >
+                <a data-toggle="modal" href='javascript:void(0)'  onClick={() => { console.log('Commment clicked!') } } >
                   <span className="icon icon-chat text-muted"></span>  Comment
                 </a>
               </div>
             </div>
           </div>
-
-          <MessageModal   />
-          </li>
+        </li>
 
     );
   }
