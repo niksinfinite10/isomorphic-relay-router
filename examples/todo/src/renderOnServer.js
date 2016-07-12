@@ -33,6 +33,7 @@ export default (req, res, next) => {
       const reactOutput = ReactDOMServer.renderToString(IsomorphicRouter.render(props));
       res.render(path.resolve(__dirname, '..', 'views', 'index.ejs'), {
         preloadedData: data,
+        authToken:"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiIxMSIsImlhdCI6MTQ2ODMwNDA0Mn0.rrkC6gyOD9_LxmBPmfDhA1kfvn_8jFDVUBDMwyGNVd0",
         reactOutput
       });
     }

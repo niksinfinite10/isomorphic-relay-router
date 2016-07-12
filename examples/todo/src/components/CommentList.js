@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import Relay from 'react-relay';
 import Comment from './Comment';
-
+import CreateCommentMutation from '../mutations/CreateCommentMutation';
 
 class CommentList extends Component{
   renderRow(){
@@ -13,11 +13,54 @@ class CommentList extends Component{
      return row;
 
   }
+
+
+ uniCharCode(event) {
+   if(event.which === 13)
+   {
+
+     console.log('this is input text',this._input.value);
+     let mutationInput = {
+      comment: {
+        comment: this._input.value,
+        postId: this.props.node.id,
+
+      },
+      //ToDo:add the current user object in the mutation
+      user:{
+          id: "VXNlcjoxNQ==",
+          diet: "VEGETARIAN",
+          displayName: "Nikhil Surti",
+          profileImageUrl: "https://scontent.xx.fbcdn.net/v/t1.0-1/p480x480/13327473_10204788630873929_2594466919174112298_n.jpg?oh=eaefbd37cd4c35c39a0ce53d4e92ea58&oe=57F4B1FA"
+
+        },
+
+      commentCount:this.props.node.commentCount
+
+    };
+    // console.log("Mutation input", mutationInput);
+
+    this.props.relay.commitUpdate(new CreateCommentMutation(mutationInput), {
+      onSuccess: data => {
+
+        console.log("Comment Mutation Data recieved ", data);
+
+      },
+      onFailure: err => {
+        console.log("Unable to coment", err);
+      }
+    });
+   }
+}
+
+//  uniKeyCode(event) {
+//     // var key = event.which || event.keyCode; // event.keyCode is used for IE8 and earlier
+//     // document.getElementById("demo2").innerHTML = "Unicode KEY code: " + key;
+//     console.log('rhis key code is ',event.which);
+// }
+
   render(){
     console.log('rendering CommentList');
-
-
-
 
     return(
         <ul className="media-list m-b">
@@ -29,10 +72,9 @@ class CommentList extends Component{
             </div>
             <div className="media-body">
                 <div className="media-heading">
-                <input type="text" className="form-control" placeholder="Comment..." />
+                <input type="text" className="form-control" placeholder="Write a Comment..." onKeyPress={this.uniCharCode.bind(this)}  ref={(c) => this._input = c} />
                 </div>
             </div>
-
           </li>
             {this.renderRow()}
         </ul>
@@ -56,6 +98,7 @@ export default  Relay.createContainer(CommentList, {
                 edges{
                     node{
                         ${Comment.getFragment('comment')}
+
                     }
                 }
               },

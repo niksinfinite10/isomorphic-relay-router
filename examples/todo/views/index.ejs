@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta property="og:title" content="Veg.me" />
-    <meta property="og:type" content="video.movie" />
+    <meta property="og:type" content="photo.movie" />
      <meta property='og:site_name' content='veg.me' />
      <meta property="og:url" content="https://www.veg.me" />
      <meta property="og:image" content="http://ia.media-imdb.com/images/rock.jpg" />
@@ -89,9 +89,6 @@
     </div>
   </nav>
 
-
-
-
         <div id="root">
           <%- reactOutput %>
         </div>
@@ -100,10 +97,12 @@
       <script src='/js/chart.js'></script>
       <script src='/js/toolkit.js'></script>
       <script src='/js/application.js'></script>
-    <script id="preloadedData" type="application/json">
-
+      <script id="authToken" type="text/javascript">
+        <%-  JSON.stringify(authToken) %>
+      </script>
+      <script id="preloadedData" type="application/json">
         <%- JSON.stringify(preloadedData).replace(/\//g, '\\/') %>
-    </script>
+      </script>
     <script src="/app.js"></script>
 </body>
 </html>
