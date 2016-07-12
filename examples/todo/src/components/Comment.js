@@ -9,14 +9,14 @@ class Comment extends Component{
         <li className="list-group-item">
           <div className="media-left">
             <ul className="avatar-list">
-              <li className="avatar-list-item"><img className="img-circle" src="../assets/img/avatar-fat.jpg" /></li>
+              <li className="avatar-list-item"><img className="img-circle" src={this.props.comment.user.profileImageUrl} /></li>
             </ul>
           </div>
           <div className="media-body">
-              <small className="pull-right text-muted">34 min</small>
+              <small className="pull-right text-muted">{this.props.comment.since}</small>
               <div className="media-heading">
-              <a href="#"><strong>Fat</strong></a>
-                This is comment section...
+              <a href="#"><strong>{this.props.comment.user.fName} </strong></a>
+                {this.props.comment.comment}
           </div>
         </div>
       </li>
@@ -24,4 +24,21 @@ class Comment extends Component{
   }
 }
 
-export default Comment;
+
+
+ export default Relay.createContainer(Comment, {
+  fragments: {
+    comment: () => Relay.QL `
+      fragment on Comment{
+              id,
+              comment,
+              since,
+              user{
+                id,
+                fName,
+                profileImageUrl,
+                displayName
+              }
+          }`
+      }
+});

@@ -18,10 +18,12 @@
     "isomorphic-relay-router": "file:../..",
     "moment": "^2.14.1",
     "react": "^15.0.1",
+    "react-dimensions": "^1.3.0",
     "react-dom": "^15.0.1",
     "react-native-timeago": "https://github.com/niksinc/react-native-timeago",
     "react-relay": "0.9.0",
     "react-router": "^2.3.0",
+    "react-timeago": "https://github.com/niksinfinite10/react-timeago",
     "react-timer-mixin": "^0.13.3"
   },
   "devDependencies": {
