@@ -5,7 +5,7 @@ import Profile from './screens/Profile';
 import Notifications from './screens/Notifications';
 import TodoList from './components/TodoList';
 import ProfileCard from './components/ProfileCard';
-import Impact from './screens/Impact';
+import MealImpact from './screens/MealImpact';
 
 import ViewerQueries from './queries/ViewerQueries';
 import ViewerQueries1 from './queries/ViewerQueries1';
@@ -18,17 +18,29 @@ export default [
 
   },
   {
-      path: '/impact',
-      component: Impact,
+      path: '/mealimpact',
+      component: MealImpact,
       queries: ViewerQueries1,
       childRoutes: [
          {
              path: ':nodeId',
-             component: Home,
+             component: MealImpact,
              queries: ViewerQueries1,
          },
       ],
   },
+  // {
+  //     path: '/impact',
+  //     component: MealImpact,
+  //     queries: ViewerQueries1,
+  //     childRoutes: [
+  //        {
+  //            path: ':nodeId',
+  //            component: MealImpact,
+  //            queries: ViewerQueries1,
+  //        },
+  //     ],
+  // },
   {
       path: '/profile',
       component: Profile,
@@ -41,8 +53,8 @@ export default [
   },
     {
         path: '/',
-        component: Home1,
-
+        component: Home,
+        queries: ViewerQueries,
         childRoutes: [
            {
                path: ':userId',
